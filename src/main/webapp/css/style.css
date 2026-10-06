@@ -1,0 +1,465 @@
+/* ====================================================================
+   SMART CAMPUS EMERGENCY & INCIDENT MANAGEMENT SYSTEM
+   Modern, Clean, Responsive Theme (Bootstrap 5 Enhanced)
+   ==================================================================== */
+
+:root {
+    --primary-color: #1e40af;
+    --primary-hover: #1d4ed8;
+    --primary-light: #eff6ff;
+    --secondary-color: #475569;
+    --accent-purple: #6366f1;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --critical-color: #dc2626;
+    
+    --bg-light: #f8fafc;
+    --card-bg: #ffffff;
+    --text-dark: #0f172a;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    
+    --sidebar-width: 260px;
+    --header-height: 70px;
+    --transition-speed: 0.25s;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --------------------------------------------------------------------
+   NAVIGATION & HEADER
+   -------------------------------------------------------------------- */
+.navbar-custom {
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    padding: 0.75rem 1.5rem;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--primary-color) !important;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.navbar-brand i {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+}
+
+.brand-badge {
+    background: #dbeafe;
+    color: var(--primary-color);
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: 9999px;
+    text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------
+   DASHBOARD LAYOUT (SIDEBAR + MAIN)
+   -------------------------------------------------------------------- */
+.app-container {
+    display: flex;
+    flex: 1;
+    min-height: calc(100vh - var(--header-height));
+}
+
+.sidebar {
+    width: var(--sidebar-width);
+    background: #ffffff;
+    border-right: 1px solid var(--border-color);
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-item {
+    margin-bottom: 0.35rem;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.75rem 1rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    transition: all var(--transition-speed);
+}
+
+.sidebar-link i {
+    font-size: 1.15rem;
+    width: 24px;
+    text-align: center;
+}
+
+.sidebar-link:hover {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+}
+
+.sidebar-link.active {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.sidebar-link.active i {
+    color: #ffffff;
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    background-color: var(--bg-light);
+}
+
+/* --------------------------------------------------------------------
+   STAT CARDS & METRICS
+   -------------------------------------------------------------------- */
+.stat-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.stat-card .stat-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.stat-card .stat-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: 0.3rem;
+}
+
+.stat-card .stat-number {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.icon-blue { background: #dbeafe; color: #1d4ed8; }
+.icon-red { background: #fee2e2; color: #dc2626; }
+.icon-amber { background: #fef3c7; color: #d97706; }
+.icon-green { background: #d1fae5; color: #059669; }
+.icon-purple { background: #ede9fe; color: #6d28d9; }
+.icon-gray { background: #f1f5f9; color: #475569; }
+
+/* --------------------------------------------------------------------
+   STATUS & PRIORITY BADGES
+   -------------------------------------------------------------------- */
+.badge-priority {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.35rem 0.65rem;
+    border-radius: 9999px;
+    letter-spacing: 0.025em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.badge-low { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+.badge-medium { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+.badge-high { background: #ffedd5; color: #c2410c; border: 1px solid #fed7aa; }
+.badge-critical { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; font-weight: 800; }
+
+.badge-status {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.35rem 0.65rem;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.badge-status-reported { background: #fef3c7; color: #b45309; }
+.badge-status-assigned { background: #e0e7ff; color: #4338ca; }
+.badge-status-progress { background: #dbeafe; color: #1e40af; }
+.badge-status-resolved { background: #d1fae5; color: #065f46; }
+.badge-status-closed { background: #f1f5f9; color: #475569; }
+
+/* --------------------------------------------------------------------
+   TIMELINE (INCIDENT AUDIT LOG)
+   -------------------------------------------------------------------- */
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+    list-style: none;
+    margin: 1.5rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 11px;
+    width: 2px;
+    background: #cbd5e1;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 1.75rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -2rem;
+    top: 0.15rem;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 3px solid var(--primary-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.timeline-marker.resolved {
+    border-color: var(--success-color);
+    background: #d1fae5;
+}
+
+.timeline-content {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.timeline-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.timeline-time {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: normal;
+}
+
+.timeline-note {
+    font-size: 0.875rem;
+    color: var(--secondary-color);
+    margin-top: 0.35rem;
+    margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------
+   CARD & TABLE STYLING
+   -------------------------------------------------------------------- */
+.card-custom {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 1.5rem;
+}
+
+.card-custom .card-header {
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.25rem 1.5rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-custom .card-body {
+    padding: 1.5rem;
+}
+
+.table-custom {
+    margin-bottom: 0;
+}
+
+.table-custom th {
+    background-color: #f8fafc;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.85rem 1rem;
+    border-top: none;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table-custom td {
+    padding: 1rem;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.9rem;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+/* --------------------------------------------------------------------
+   HERO BANNER & LANDING PAGE
+   -------------------------------------------------------------------- */
+.hero-section {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
+    color: #ffffff;
+    padding: 4.5rem 1.5rem;
+    border-radius: 0 0 2rem 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.hero-title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.75rem;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #e0e7ff;
+    max-width: 650px;
+    margin: 0 auto 2rem auto;
+}
+
+.feature-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.feature-icon-box {
+    width: 64px;
+    height: 64px;
+    border-radius: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+}
+
+/* --------------------------------------------------------------------
+   PROGRESS BARS FOR REPORTS
+   -------------------------------------------------------------------- */
+.progress-container {
+    margin-bottom: 1rem;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+
+.progress-bar-custom {
+    height: 10px;
+    background-color: #e2e8f0;
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 9999px;
+    transition: width 0.8s ease-in-out;
+}
+
+/* --------------------------------------------------------------------
+   EMERGENCY BANNER
+   -------------------------------------------------------------------- */
+.emergency-banner {
+    background: #fee2e2;
+    border-left: 4px solid #dc2626;
+    color: #991b1b;
+    padding: 1rem 1.25rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .sidebar {
+        display: none;
+    }
+    .hero-title {
+        font-size: 2rem;
+    }
+}
